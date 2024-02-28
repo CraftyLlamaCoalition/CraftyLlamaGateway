@@ -1,7 +1,6 @@
 package main
 
 import (
-    "fmt"
     "flag"
     "log"
 
@@ -14,9 +13,9 @@ var (
 
 func main() {
     flag.Parse()
-    gatewayServer := server.NewServer(port)
+    gatewayServer := server.NewServer(*port)
 
-    if err = gatewayServer.ListenAndServer(); err != nil {
+    if err := gatewayServer.ListenAndServe(); err != nil {
         log.Fatalf("Failed to listen on grpc gateway server: %v", err)
     }
 }

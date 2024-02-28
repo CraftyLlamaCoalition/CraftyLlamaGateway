@@ -2,7 +2,7 @@ package server
 
 import (
     "context"
-    "fmt"
+    "log"
 
     pb "github.com/CraftyLlamaCoalition/CraftyLlamaProto-Go/generated"
 )
