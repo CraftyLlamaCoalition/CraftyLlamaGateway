@@ -4,7 +4,7 @@ import (
     "flag"
     "log"
 
-    "github.com/CraftyLlamaCoalition/CraftyLlamaGateway/internal/server"
+    "CraftyLlamaNotes/internal/server"
 )
 
 var (

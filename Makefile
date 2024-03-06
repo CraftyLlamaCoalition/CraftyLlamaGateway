@@ -4,7 +4,7 @@ BINARY=gateway
 all: clean build run
 
 build:deps
-	go build -o $(BUILD_DIR)/$(BINARY) ./cmd/api/main.go
+	go build -o $(BUILD_DIR)/$(BINARY) ./cmd/main.go
 
 clean:
 	rm -rf $(BUILD_DIR)
