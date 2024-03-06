@@ -1,9 +1,9 @@
-module github.com/CraftyLlamaCoalition/CraftyLlamaGateway
+module github.com/CraftyLlamaCoalition/CraftyLlamaNotes
 
 go 1.22.0
 
 require (
-	github.com/CraftyLlamaCoalition/CraftyLlamaProto-Go v0.0.0-20240225224109-321bf1f4405a
+	github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo v0.0.0-20240306224827-0b66c8a405b5
 	google.golang.org/grpc v1.62.0
 )
 

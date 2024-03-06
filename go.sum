@@ -1,5 +1,5 @@
-github.com/CraftyLlamaCoalition/CraftyLlamaProto-Go v0.0.0-20240225224109-321bf1f4405a h1:6TGtsw8xXE0kLLU80Fg/WnwxeZzocvfcQfiDfwIpano=
-github.com/CraftyLlamaCoalition/CraftyLlamaProto-Go v0.0.0-20240225224109-321bf1f4405a/go.mod h1:Ofx/Z1lg3Pwku2koKf3ak0u/eZVBYiss3U0q5kqv8Ns=
+github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo v0.0.0-20240306224827-0b66c8a405b5 h1:FENCSUsAC98oswVNWAYF4InPi22f9bLkOhv6q1JlPBk=
+github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo v0.0.0-20240306224827-0b66c8a405b5/go.mod h1:Z+eHBK5Ubq8BhiQGm8E74/v32MnR75d4Gq9BBB+zEYU=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golang/protobuf v1.5.3 h1:KhyjKVUg7Usr/dYsdSqoFveMYd5ko72D+zANwlG1mmg=
 github.com/golang/protobuf v1.5.3/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=

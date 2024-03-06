@@ -7,12 +7,12 @@ import (
     
 
     "google.golang.org/grpc"
-    pb "github.com/CraftyLlamaCoalition/CraftyLlamaProto-Go/generated"
+    pb "github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo"
 )
 
 
 type server struct {
-    pb.UnimplementedTestMessageServiceServer
+    pb.UnimplementedCriaNotesServiceServer
     port int
 }
 
@@ -27,7 +27,7 @@ func (s *server) ListenAndServe() error {
         return err
     }
     gprcServer := grpc.NewServer()
-    pb.RegisterTestMessageServiceServer(gprcServer, s)
+    pb.RegisterCriaNotesServiceServer(gprcServer, s)
     if err := gprcServer.Serve(lis); err != nil {
         log.Fatalf("failed to serve: %v", err)
         return err

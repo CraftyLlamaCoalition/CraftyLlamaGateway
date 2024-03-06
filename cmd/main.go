@@ -4,7 +4,7 @@ import (
     "flag"
     "log"
 
-    "CraftyLlamaNotes/internal/server"
+    "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/internal/server"
 )
 
 var (
@@ -14,7 +14,7 @@ var (
 func main() {
     flag.Parse()
     gatewayServer := server.NewServer(*port)
-
+    log.Printf("Listening on port %d\n", *port) 
     if err := gatewayServer.ListenAndServe(); err != nil {
         log.Fatalf("Failed to listen on grpc gateway server: %v", err)
     }
