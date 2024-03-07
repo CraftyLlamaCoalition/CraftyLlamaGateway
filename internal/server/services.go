@@ -23,3 +23,24 @@ func (s *server) DeleteNote(ctx context.Context, in *pb.NoteRequest) (*pb.Status
     return status, nil
 }
 
+func (s *server) GetNote(ctx context.Context, in *pb.NoteRequest) (*pb.NoteContent, error) {
+
+    note := &pb.NoteContent{}
+    note.Content = "Not impletmented yet"
+    return note, nil
+}
+
+func (s *server) GetAllNotes(ctx context.Context, in *pb.User) (*pb.MultipleNotes, error) {
+
+
+    note1 := &pb.NoteContent{}
+    note2 := &pb.NoteContent{}
+    note1.Content = "Not impletmented yet"
+    note2.Content = "Not impletmented yet"
+    notes := make([]*pb.NoteContent, 0)
+    notes = append(notes,note1)
+    notes = append(notes,note2)
+    // &pb.MultipleNotes
+    return &pb.MultipleNotes{Notes:notes}, nil
+}
+
