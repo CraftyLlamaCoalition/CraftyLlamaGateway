@@ -1,4 +1,4 @@
-package server
+package notes
 
 import (
     "context"
@@ -7,8 +7,12 @@ import (
     pb "github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo"
 )
 
+type GRPCNoteServer struct {
+    pb.UnimplementedCriaNotesServiceServer
+}
 
-func (s *server) AddNote(ctx context.Context, in *pb.NewNoteRequest) (*pb.Status, error) {
+
+func (s *GRPCNoteServer) AddNote(ctx context.Context, in *pb.NewNoteRequest) (*pb.Status, error) {
     log.Printf("Received From %v: %v",in.GetUserId(), in.GetContent())
     status := &pb.Status{}
     status.Success = true
@@ -16,21 +20,21 @@ func (s *server) AddNote(ctx context.Context, in *pb.NewNoteRequest) (*pb.Status
 }
 
 
-func (s *server) DeleteNote(ctx context.Context, in *pb.NoteRequest) (*pb.Status, error) {
+func (s *GRPCNoteServer) DeleteNote(ctx context.Context, in *pb.NoteRequest) (*pb.Status, error) {
     log.Printf("Received for note: %v", in.GetNoteId())
     status := &pb.Status{}
     status.Success = true
     return status, nil
 }
 
-func (s *server) GetNote(ctx context.Context, in *pb.NoteRequest) (*pb.NoteContent, error) {
+func (s *GRPCNoteServer) GetNote(ctx context.Context, in *pb.NoteRequest) (*pb.NoteContent, error) {
 
     note := &pb.NoteContent{}
     note.Content = "Not impletmented yet"
     return note, nil
 }
 
-func (s *server) GetAllNotes(ctx context.Context, in *pb.User) (*pb.MultipleNotes, error) {
+func (s *GRPCNoteServer) GetAllNotes(ctx context.Context, in *pb.User) (*pb.MultipleNotes, error) {
 
 
     note1 := &pb.NoteContent{}
