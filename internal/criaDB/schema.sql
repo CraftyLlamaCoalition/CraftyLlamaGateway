@@ -1,0 +1,9 @@
+CREATE TABLE notes (
+    id SERIAL PRIMARY KEY,
+    createdBy TEXT NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    content TEXT NOT NULL,
+    llmResp TEXT 
+)
+

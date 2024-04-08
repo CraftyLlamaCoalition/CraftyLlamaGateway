@@ -1,26 +1,36 @@
 package main
 
 import (
-    "flag"
     "log"
     "net"
     "fmt"
+    "os"
+    "strconv"
+
+    "github.com/joho/godotenv"
 
     "google.golang.org/grpc"
     "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/api/grpc/notes"
     pb "github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo"
+    db "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/internal/criaDB"
     
 )
 
-var (
-    port = flag.Int("port", 50051, "Server Port")
-)
 
 func main() {
-    flag.Parse()
-    log.Printf("Listening on port %d\n", *port) 
+    err := godotenv.Load(".env")
+    if err != nil {
+        log.Fatalf("Error loading .env file")
+    }
 
-    lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
+    port, err := strconv.Atoi(os.Getenv("GRPC_PORT"))
+    if err != nil {
+        log.Fatalf("Failed to get GPRC PORT number")
+        return
+    }
+
+    log.Printf("Listening on port %d\n", port) 
+    lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
     if err != nil {
         log.Fatalf("Failed to listen: %v", err)
         return

@@ -5,7 +5,6 @@ import (
     "log"
 
     pb "github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo"
-    dynDB "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/internal/db"
 )
 
 type GRPCNoteServer struct {
@@ -17,9 +16,6 @@ func (s *GRPCNoteServer) AddNote(ctx context.Context, in *pb.NewNoteRequest) (*p
     log.Printf("Received From %v: %v",in.GetUserId(), in.GetContent())
     status := &pb.Status{}
     status.Success = true
-    if err := dynDB.ListTables(); err != nil {
-        log.Fatalf("Error: %s\n", err)
-    }
     return status, nil
 }
 
