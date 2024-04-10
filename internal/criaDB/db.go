@@ -9,14 +9,13 @@ import (
     "github.com/jackc/pgx/v5"
     // "github.com/jackc/pgx/v5/pgtype"
     //
-    // "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/internal/criaDB/sqlcDB"
 
 )
 
 type DBConnection struct {
-    ctx context.Context
-    conn *pgx.Conn
-    name string
+    Ctx context.Context
+    Conn *pgx.Conn
+    Name string
 }
 
 func Connect(dbURL string, dbname string,  user string, password string) (*DBConnection, error) {
@@ -34,14 +33,14 @@ func Connect(dbURL string, dbname string,  user string, password string) (*DBCon
 
     log.Printf("Connected to DB %s", dbname)
     return &DBConnection{
-        ctx: ctx,
-        conn: conn,
-        name: dbname,
+        Ctx: ctx,
+        Conn: conn,
+        Name: dbname,
     }, nil
 }
 
 func (db *DBConnection) Close() error {
-    return db.conn.Close(conn.ctx)
+    return db.Conn.Close(db.Ctx)
 }
 
 

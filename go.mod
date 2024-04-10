@@ -6,7 +6,6 @@ require (
 	github.com/CraftyLlamaCoalition/CraftyLlamaProtoGo v0.0.0-20240306224827-0b66c8a405b5
 	github.com/jackc/pgx/v5 v5.5.5
 	github.com/joho/godotenv v1.5.1
-	github.com/lib/pq v1.10.9
 	google.golang.org/grpc v1.62.0
 )
 

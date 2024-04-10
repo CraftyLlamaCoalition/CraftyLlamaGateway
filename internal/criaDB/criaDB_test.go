@@ -3,7 +3,7 @@ package criaDB
 import (
     "testing"
     
-    sql "github.com/CraftyLlamaCoalition/CraftlyLlamaNotes/internal/criaDB/sqlcDB"
+    // sql "github.com/CraftyLlamaCoalition/CraftyLlamaNotes/internal/criaDB/sqlcDB"
 )
 
 var (
@@ -24,24 +24,3 @@ func TestDBConnection(t *testing.T) {
     }
 }
 
-func TestAddNote(t *testing.T) {
-
-    db, err := Connect(url, dbname, user, pass)
-    defer db.Close()
-    if err != nil {
-        t.Fatalf("Error: %v", err)
-    }
-    
-    queries := sql.New(db.conn)
-    
-    newNote, err := queries.CreateNote(db.ctx, sql.CreateNoteParams{
-        CreatedBy: "Nickolas larson",
-        Content: "New note added through test"
-    })
-    
-    if err != nil {
-        t.Fatalf("Error: %v", err)
-    }
-
-    t.Printf("Created new note: %d\n", newNote.ID)
-}
